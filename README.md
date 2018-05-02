@@ -19,6 +19,5 @@ But when those two files are moved to `~/Library/Application\ Support/McNeel/Rhi
 7. Move the files to `~/Library/Application\ Support/McNeel/Rhinoceros/MacPlugIns/Grasshopper/Libraries/SimpleDynamicLibTest` to install.
 8. Restart Rhino/Grasshopper.
 9. It will raise the same exception even though they are in the same directory.
-10. When `.dylib` is placed under `/usr/lib/libSimple.dylib` it works...
-
+10. When `.dylib` is placed under `/usr/local/lib/libSimple.dylib` it works... assuming it's the default dylib path to look for.
 but I'd like to know how to place the .dylib as the same directory as .gha to keep things clean.
