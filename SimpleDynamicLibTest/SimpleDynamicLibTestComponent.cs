@@ -11,7 +11,43 @@ namespace SimpleDynamicLibTest
     public class SimpleDynamicLibTestComponent : GH_Component
     {
 
-        [DllImport("libSimple.dylib")] static extern int SimpleFn(int a);
+        // [DllImport("libSimple.dylib")] static extern int SimpleFn(int a);
+
+        IntPtr libraryHandle;
+
+        [DllImport("__Internal")]
+        public static extern IntPtr dlopen(string path, int flag);
+
+        [DllImport("__Internal")]
+        public static extern IntPtr dlsym(IntPtr handle, string symbolName); 
+
+        [DllImport("__Internal")]
+        public static extern int dlclose(IntPtr handle);
+     
+        public static IntPtr OpenLibrary(string path)
+        {
+            IntPtr handle = dlopen(path, 0);
+            if (handle == IntPtr.Zero)
+            {
+                throw new Exception("Couldn't open native library: " + path);
+            }
+            return handle;
+        }
+     
+        public static void CloseLibrary(IntPtr libraryHandle)
+        {
+            dlclose(libraryHandle);
+        }
+     
+        public static T GetDelegate<T>(IntPtr libraryHandle, string functionName) where T : class
+        {
+            IntPtr symbol = dlsym(libraryHandle, functionName);
+            if (symbol == IntPtr.Zero)
+            {
+                throw new Exception("Couldn't get function: " + functionName);
+            }
+            return Marshal.GetDelegateForFunctionPointer(symbol, typeof(T)) as T;
+        }
 
 
         /// <summary>
@@ -26,7 +62,10 @@ namespace SimpleDynamicLibTest
             "Construct an Archimedean, or arithmetic, spiral given its radii and number of turns.",
             "Curve", "Primitive")
         {
+            libraryHandle = OpenLibrary("/Users/mnmly/Library/Application Support/McNeel/Rhinoceros/MacPlugIns/Grasshopper/Libraries/SimpleDynamicLibTest/libSimple.dylib");
         }
+
+        public delegate int SimpleFn(int a);
 
         /// <summary>
         /// Registers all the input parameters for this component.
@@ -55,8 +94,16 @@ namespace SimpleDynamicLibTest
         /// to store data in output parameters.</param>
         protected override void SolveInstance(IGH_DataAccess DA)
         {
-            AddRuntimeMessage(GH_RuntimeMessageLevel.Remark, "Result from Simple Fn" + SimpleFn(1).ToString());
+            SimpleFn fn = GetDelegate<SimpleFn>(libraryHandle, "SimpleFn");
+            AddRuntimeMessage(GH_RuntimeMessageLevel.Remark, "Result from Simple Fn " + fn(10).ToString());
         }
+
+        public override void RemovedFromDocument(GH_Document document)
+        {
+            CloseLibrary(libraryHandle);
+            base.RemovedFromDocument(document);
+        }
+
 
         /// <summary>
         /// The Exposure property controls where in the panel a component icon 

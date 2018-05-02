@@ -1,14 +1,14 @@
 ﻿<Properties StartupConfiguration="{9926BEEE-FB5D-4224-9DF3-1D36EF3E5B34}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="SimpleDynamicLibTest/SimpleDynamicLibTestComponent.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="SimpleDynamicLibTest/SimpleDynamicLibTestComponent.cs" Line="2" Column="1" />
+      <File FileName="SimpleDynamicLibTest/SimpleDynamicLibTestComponent.cs" Line="11" Column="55" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="SimpleDynamicLibTest" expanded="True">
             <Node name="SimpleDynamicLibTest" expanded="True">
-              <Node name="SimpleDynamicLibTestComponent.cs" selected="True" />
+              <Node name="References" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -24,7 +24,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.SimpleDynamicLibTest PreferredExecutionTarget="MonoDevelop.Default" FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.SimpleDynamicLibTest PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
