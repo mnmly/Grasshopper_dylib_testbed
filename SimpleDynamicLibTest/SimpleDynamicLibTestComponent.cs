@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
 
@@ -62,7 +63,10 @@ namespace SimpleDynamicLibTest
             "Construct an Archimedean, or arithmetic, spiral given its radii and number of turns.",
             "Curve", "Primitive")
         {
-            libraryHandle = OpenLibrary("/Users/mnmly/Library/Application Support/McNeel/Rhinoceros/MacPlugIns/Grasshopper/Libraries/SimpleDynamicLibTest/libSimple.dylib");
+
+            GH_AssemblyInfo info = Instances.ComponentServer.FindAssembly(new Guid("3a4acc40-c327-4de9-ac25-51b4014c9fd6"));
+            var path = Path.GetDirectoryName(info.Location);
+            libraryHandle = OpenLibrary(path + "/libSimple.dylib");
         }
 
         public delegate int SimpleFn(int a);

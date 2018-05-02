@@ -1,7 +1,8 @@
 ﻿<Properties StartupConfiguration="{9926BEEE-FB5D-4224-9DF3-1D36EF3E5B34}|">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="SimpleDynamicLibTest/SimpleDynamicLibTestInfo.cs">
     <Files>
-      <File FileName="SimpleDynamicLibTest/SimpleDynamicLibTestComponent.cs" Line="11" Column="55" />
+      <File FileName="SimpleDynamicLibTest/SimpleDynamicLibTestComponent.cs" Line="73" Column="52" />
+      <File FileName="SimpleDynamicLibTest/SimpleDynamicLibTestInfo.cs" Line="58" Column="9" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -9,6 +10,7 @@
           <Node name="SimpleDynamicLibTest" expanded="True">
             <Node name="SimpleDynamicLibTest" expanded="True">
               <Node name="References" expanded="True" />
+              <Node name="SimpleDynamicLibTestInfo.cs" selected="True" />
             </Node>
           </Node>
         </State>
