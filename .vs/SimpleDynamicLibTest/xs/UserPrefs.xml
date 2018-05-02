@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{9926BEEE-FB5D-4224-9DF3-1D36EF3E5B34}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SimpleDynamicLibTest/SimpleDynamicLibTestComponent.cs">
+    <Files>
+      <File FileName="SimpleDynamicLibTest/SimpleDynamicLibTestComponent.cs" Line="2" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SimpleDynamicLibTest" expanded="True">
+            <Node name="SimpleDynamicLibTest" expanded="True">
+              <Node name="SimpleDynamicLibTestComponent.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State name="__root__">
+          <Node name="SimpleDynamicLibTest" expanded="True" selected="True" />
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.SimpleDynamicLibTest PreferredExecutionTarget="MonoDevelop.Default" FirstBuild="True" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
